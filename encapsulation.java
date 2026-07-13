@@ -10,6 +10,10 @@ class SportsCar{
     this.brand=brand;
     this.model=model;
   }
+  public void Type()
+  {
+    System.out.println("This is a "+brand+" with the model "+model);
+  }
   public int getSpeed()
   {
     return currentSpeed;
@@ -77,6 +81,7 @@ public class encapsulation {
         car.startEngine();
         car.shiftGear(1);
         car.accelerate();
+        car.Type();
         System.out.println("Current speed: " + car.getSpeed());
         System.out.println("Tyre company: " + car.getTyreCompany());    
     }
