@@ -4,14 +4,23 @@ class ManualCar{
     private boolean isEngineOn;
     private int currentSpeed;
     private int currentGear;
+    //constructor
     public ManualCar(String brand,String model)
-    {
+    {   //initialization
         this.brand=brand;
         this.model=model;
         this.isEngineOn=false;
         this.currentSpeed=0;
         this.currentGear=0;
         System.out.println("This is a "+brand+" with the model "+model);
+    }
+    public void display_details()
+    {
+        System.out.println("brand: "+brand);
+        System.out.println("model: "+model);
+        System.out.println("engine status: "+isEngineOn);
+        System.out.println("current speed: "+currentSpeed);
+        System.out.println("current gear: "+currentGear);
     }
     public void startEngine()
     {
@@ -25,6 +34,7 @@ class ManualCar{
         currentGear=0;
         System.out.println("engine is turned off");
     }
+    //method overloading
     public void accelerate()
     {
         if(!isEngineOn)
@@ -38,6 +48,7 @@ class ManualCar{
             System.out.println("speed is increased by 10km/hr");
         }
     }
+    //method with a variable
     public void accelerate(int speed)
     {
         if(!isEngineOn)
@@ -89,7 +100,7 @@ class ManualCar{
 }
 public class static_polymorphism {
     public static void main(String[] args)
-    {
+    {  //object of the class is created
         ManualCar car=new ManualCar("Toyota","Corolla");
         car.startEngine();
         car.accelerate();
