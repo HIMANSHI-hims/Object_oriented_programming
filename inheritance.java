@@ -1,9 +1,10 @@
+//parent class
 class Car{
+    //these variables will be used by 2 child classes also
     protected String brand;
     protected String model;
     protected boolean isEngineOn;
     protected int  currentSpeed;
-
     public Car(String brand,String model)
     {
         this.brand=brand;
@@ -57,10 +58,12 @@ class Car{
         }
     }
 }
+//child class-1
 class ElectricCar extends Car{
+    //put this as public so that it can be accesse in the main method.
     public int batteryPower;
     public ElectricCar(String brand,String model)
-    {
+    {   //refers to the parent variable 
         super(brand,model);
         this.batteryPower=100;
     }
@@ -70,8 +73,9 @@ class ElectricCar extends Car{
         System.out.println("battery is fully charged");
     }
 }
+//child class-2
 class ManualCar extends Car{
-    private int currentGear;
+    public int currentGear;
     public ManualCar(String brand,String model)
     {
         super(brand,model);
@@ -91,10 +95,12 @@ class ManualCar extends Car{
         }        
     }
 }
+//main class
 public class inheritance{
     public static void main(String[] args)
     {
         ElectricCar tesla=new ElectricCar("Tesla","Model S");
+        //methods from the parent class are accessed by the object of the child class
         tesla.startEngine();
         tesla.accelerate();
         tesla.brake();
@@ -105,6 +111,7 @@ public class inheritance{
         System.out.println("battery power of the car is "+tesla.batteryPower+"%");
         
         ManualCar honda=new ManualCar("Honda","Civic");
+        //parent class methods are accessed by the child class objects
         honda.startEngine();
         honda.shiftGear(2);
         honda.accelerate();
