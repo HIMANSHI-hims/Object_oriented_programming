@@ -22,9 +22,11 @@ abstract class Car{
         currentSpeed=0;
         System.out.println("engine is turned off");
     }
+    //abstract methods
     public abstract void accelerate();
     public abstract void brake();
 }
+//child class 1
 class ManualCar extends Car{
     private int currentGear;
     public ManualCar(String brand,String model)
@@ -71,6 +73,7 @@ class ManualCar extends Car{
         }
     }
 }
+//child class 2
 class ElectricCar extends Car{
     public ElectricCar(String brand,String model)
     {   //initialization
